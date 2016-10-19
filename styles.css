@@ -12,8 +12,10 @@ img {
   height: 100vh;
   position: fixed;
   text-align: center;
-
 }
+header {
+}
+
 .right {
   background-color: #cfd8dc;
   overflow: auto;
@@ -27,7 +29,7 @@ h1 {
   color: white;
   font-size: 60px;
   font-weight: bold;
-  margin-top: 50%;
+  margin-top: 30%;
   margin-bottom: 40px;
 
 }
@@ -89,7 +91,7 @@ border-bottom: 1px solid #cfd8dc;
   height: 120px;
 }
 
-.read, .delete {
+.read-button, .delete {
   outline: none;
   border: none;
   background-color: #ffffff;
@@ -103,7 +105,7 @@ border-bottom: 1px solid #cfd8dc;
 
 }
 
-.read:hover, .delete:hover {
+.read-button:hover, .delete:hover {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   border-bottom: 1px solid #ffc107;
