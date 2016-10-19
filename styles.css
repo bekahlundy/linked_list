@@ -101,8 +101,11 @@ border-bottom: 1px solid #cfd8dc;
   text-decoration: underline #455a64;
 
 }
-.delete {
-
+p {
+color: white;
+font-size: 20px;
+margin-bottom: 15px;
+margin-top: -15px;
 }
 
 .read-button:hover, .delete:hover {

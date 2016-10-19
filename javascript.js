@@ -1,21 +1,35 @@
+var count = 0;
+var title = $('.title');
+var url = $('.url');
 
-
-$('.enter').click(function(){
+$('.enter').on('click', function(){
+  checkFields();
   createCards();
+  count++;
+  $('.linkcounter').text('Number of links is: '+count);
 });
 
+function checkFields() {
+  $('.error').text('');
+  $('.enter').disabled = false;
+  if ($('.title').val() === '' || $('.url').val() === '') {
+    displayError();
+  }
+};
 
+
+function displayError() {
+  $('.error').text('Error, you fd up.');
+    $('.enter').button('disabled');
+}
 
 function createCards() {
-  var title = $('.title').val();
-  var url = $('.url').val();
-
   $('.right').append(`<li class ='box'>
 
-        <div class='title-result'>${title}
+        <div class='title-result'>${title.val()}
         </div>
 
-        <div class='url-result'>${url}
+        <div class='url-result'>${url.val()}
         </div>
 
         <button class='read-button' type='button'>read
@@ -24,12 +38,17 @@ function createCards() {
         <button class='delete'>delete
         </button>
   </li>`)
-  console.log($('.read-button'))
-
 };
 
 
 
-$('.right').click('.read-button', function() {
-   $('.box').toggleClass('read');
+$('.right').on('click', '.read-button', function() {
+   $(this).parent('li').toggleClass('read');
+});
+
+
+$('.right').on('click', '.delete', function(){
+  $(this).parent('li').remove();
+  count--;
+  $('.linkcounter').text('Number of links is: '+count);
 });
