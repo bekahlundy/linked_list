@@ -11,12 +11,16 @@ img {
   float:left;
   width: 50vw;
   height: 100vh;
-  display: fixed;
+  position: fixed;
   text-align: center;
 }
 .right {
   background-color: #cfd8dc;
   overflow: auto;
+  float: right;
+  /*position: absolute;*/
+  right: 50px;
+
 }
 h1 {
   font-family: 'Open Sans', sans-serif;
@@ -50,6 +54,11 @@ h1 {
   margin: auto;
   outline: none;
 }
+
+.enter:hover {
+   background: #ffd773;
+   text-decoration: none;
+}
 .title-result {
 color: #455a64;
 font-family: 'Open Sans', sans-serif;
@@ -73,4 +82,12 @@ padding-bottom: 5px;
   border: 1px solid #607d8b;
   margin: 15px 11px;
   padding:8px;
+  width: 90%;
+}
+
+.read {
+  outline: none;
+  border: none;
+  background-color: #ffffff;
+
 }
