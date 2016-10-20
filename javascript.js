@@ -42,8 +42,8 @@ function createCards() {
 
 
 $('.right').on('click', '.read-button', function() {
-   $(this).parent('li').toggleClass('read');
-   $(this).closest('.read-button').toggleClass('colorred', 'changeread');
+   $(this).parent('li').toggleClass('read changeread');
+   $(this).closest('.read-button').toggleClass('colorred');
    readNumber();
    unreadNumber();
  });
