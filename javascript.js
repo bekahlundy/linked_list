@@ -1,3 +1,4 @@
+
 var title = $('.title');
 var url = $('.url');
 var readLinks = $('.read').length;
@@ -17,9 +18,8 @@ function checkFields() {
   }
 };
 
-
 function displayError() {
-  $('.error').text('Error, you fd up.');
+  $('.error').text('Error, enter a valid title and website.');
     $('.enter').button('disabled');
 }
 
@@ -42,16 +42,15 @@ function createCards() {
 
 
 $('.right').on('click', '.read-button', function() {
-    debugger;
    $(this).parent('li').toggleClass('read');
-   $(this).closest('.read-button').toggleClass('colorred');
+   $(this).closest('.read-button').toggleClass('colorred', 'changeread');
    readNumber();
    unreadNumber();
  });
 
  function totalNumber() {
     var count = $('.box').length;
-   $('.linkcounter').text('Number of links is: '+count);
+   $('.linkcounter').text('Number of links: '+count);
  }
 
  function readNumber() {

@@ -13,8 +13,6 @@ img {
   position: fixed;
   text-align: center;
 }
-header {
-}
 
 .right {
   background-color: #cfd8dc;
@@ -22,23 +20,25 @@ header {
   position: absolute;
   width:50vw;
   right: 0;
-
 }
+
 h1 {
   font-family: 'Open Sans', sans-serif;
   color: white;
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 800;
   margin-top: 30%;
   margin-bottom: 40px;
-
 }
+
 .title, .url{
   width: 90%;
   height: 30px;
   display: block;
   margin: 40px auto;
   outline: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
 }
 
 .enter, .clear {
@@ -50,8 +50,13 @@ h1 {
   outline: none;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
+  font-size: 16px;
   color: white;
   border: none;
+}
+
+.clear {
+  margin-top:20px;
 }
 
 .enter:hover, .clear:hover{
@@ -61,9 +66,10 @@ h1 {
 .title-result {
 color: #455a64;
 font-family: 'Open Sans', sans-serif;
+font-weight: 400;
 font-size: 20px;
 padding-top:5px;
-padding-bottom: 5px;
+padding-bottom: 10px;
 border-bottom: 1px solid #cfd8dc;
 }
 
@@ -73,8 +79,8 @@ border-bottom: 1px solid #cfd8dc;
 color: #607d8b;
 font-family: 'Open Sans', sans-serif;
 font-size: 16px;
-padding-top:5px;
-padding-bottom: 5px;
+padding-top:15px;
+padding-bottom: 15px;
 border-bottom: 1px solid #cfd8dc;
 }
 
@@ -86,11 +92,11 @@ border-bottom: 1px solid #cfd8dc;
 
 .box {
   background-color: #ffffff;
-  border: 1px solid #607d8b;
+  border: 2px solid #607d8b;
   margin: 20px 15px;
   padding:8px;
   width: 90%;
-  height: 120px;
+  height: 115px;
 }
 
 .read-button, .delete {
@@ -99,14 +105,23 @@ border-bottom: 1px solid #cfd8dc;
   background-color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   color: #455a64;
-  border-bottom: 1px solid #455a64;
+  border-bottom: 1px solid #cfd8dc;
   padding-bottom: 0;
+  padding-top: 15px;
+}
 
+.delete {
+  float:right;
 }
 
 .colorred {
   color: #f05a28;
   font-weight: 800;
+}
+
+.changeread {
+  background-color: blue;
+  color: magenta;
 }
 
 p {
@@ -120,4 +135,19 @@ margin-top: -15px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   border-bottom: 1px solid #ffc107;
+}
+.error, .linkcounter, .readcounter, .unreadcounter {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.linkcounter {
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 750px) {
+  .right {
+  float:left;  
+  }
 }
