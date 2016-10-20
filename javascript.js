@@ -3,13 +3,6 @@ var title = $('.title');
 var url = $('.url');
 var readLinks = $('.read').length;
 
-$('.enter').on('click', function(){
-  checkFields();
-  createCards();
-  totalNumber();
-  unreadNumber();
-});
-
 function checkFields() {
   $('.error').text('');
   $('.enter').disabled = false;
@@ -40,6 +33,27 @@ function createCards() {
   </li>`)
 };
 
+function totalNumber() {
+   var count = $('.box').length;
+  $('.linkcounter').text('Number of links: '+count);
+}
+
+function readNumber() {
+  var readCount = $('.read').length;
+ $('.readcounter').text('Number of read bookmarks: ' +readCount);
+}
+
+function unreadNumber() {
+ var unreadCount = $('.box').length - $('.read').length;
+ $('.unreadcounter').text('Number of unread bookmarks: ' +unreadCount);
+}
+
+$('.enter').on('click', function(){
+  checkFields();
+  createCards();
+  totalNumber();
+  unreadNumber();
+});
 
 $('.right').on('click', '.read-button', function() {
    $(this).parent('li').toggleClass('read changeread');
@@ -47,21 +61,6 @@ $('.right').on('click', '.read-button', function() {
    readNumber();
    unreadNumber();
  });
-
- function totalNumber() {
-    var count = $('.box').length;
-   $('.linkcounter').text('Number of links: '+count);
- }
-
- function readNumber() {
-   var readCount = $('.read').length;
-  $('.readcounter').text('Number of read bookmarks: ' +readCount);
- }
-
-function unreadNumber() {
-  var unreadCount = $('.box').length - $('.read').length;
-  $('.unreadcounter').text('Number of unread bookmarks: ' +unreadCount);
-}
 
 $('.right').on('click', '.delete', function(){
   $(this).parent('li').remove();
