@@ -1,12 +1,12 @@
-var count = 0;
 var title = $('.title');
 var url = $('.url');
+var readLinks = $('.read').length;
 
 $('.enter').on('click', function(){
   checkFields();
   createCards();
-  count++;
-  $('.linkcounter').text('Number of links is: '+count);
+  totalNumber();
+  unreadNumber();
 });
 
 function checkFields() {
@@ -41,14 +41,38 @@ function createCards() {
 };
 
 
-
 $('.right').on('click', '.read-button', function() {
+    debugger;
    $(this).parent('li').toggleClass('read');
-});
+   $(this).closest('.read-button').toggleClass('colorred');
+   readNumber();
+   unreadNumber();
+ });
 
+ function totalNumber() {
+    var count = $('.box').length;
+   $('.linkcounter').text('Number of links is: '+count);
+ }
+
+ function readNumber() {
+   var readCount = $('.read').length;
+  $('.readcounter').text('Number of read bookmarks: ' +readCount);
+ }
+
+function unreadNumber() {
+  var unreadCount = $('.box').length - $('.read').length;
+  $('.unreadcounter').text('Number of unread bookmarks: ' +unreadCount);
+}
 
 $('.right').on('click', '.delete', function(){
   $(this).parent('li').remove();
-  count--;
-  $('.linkcounter').text('Number of links is: '+count);
+  totalNumber()
+  readNumber();
+  unreadNumber();
 });
+
+$('.clear').on('click', function(){
+  $('.read').remove();
+  totalNumber()
+  readNumber();
+})
