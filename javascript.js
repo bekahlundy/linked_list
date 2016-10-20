@@ -13,7 +13,7 @@ function checkFields() {
 
 function displayError() {
   $('.error').text('Error, enter a valid title and website.');
-    $('.enter').button('disabled');
+  $('.enter').button('disabled');
 }
 
 function createCards() {
@@ -35,12 +35,12 @@ function createCards() {
 
 function totalNumber() {
    var count = $('.box').length;
-  $('.linkcounter').text('Number of links: '+count);
+   $('.linkcounter').text('Number of links: '+count);
 }
 
 function readNumber() {
   var readCount = $('.read').length;
- $('.readcounter').text('Number of read bookmarks: ' +readCount);
+  $('.readcounter').text('Number of read bookmarks: ' +readCount);
 }
 
 function unreadNumber() {
